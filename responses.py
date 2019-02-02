@@ -9,9 +9,20 @@ summaryBothOptions = 'Dla pewności pozwól, że spytam. Chciałbyś zobaczyć {
 
 cantFindMatch = 'Przepraszam ale nie rozumiem :-( Spróbuj proszę inaczej sformułować swoje pytanie'
 
-wrongSummaryMessage = 'Wybacz mój błąd. Pozwól, że się poprawię! Co się nie zgadza? Marka czy rodzaj auta?'
+cantFindResponse = 'Przepraszam ale nie rozumiem :-( Spróbuj proszę inaczej sformułować swoją odpowiedź'
+
+cantFindResponseConfirmation = 'Przepraszam ale nie rozumiem :-( Czy wybrana marka ({}) oraz typ auta ({}) jest w porządku?'
+
+whatNeedsToBeChanged = 'W takim razie, który wybór chcesz zmienić? Wybraną markę ({}) czy typ auta ({})?'
+
+wrongSummaryMessage = 'Wybacz, mój błąd. Pozwól, że się poprawię! Co się nie zgadza? Marka czy rodzaj auta?'
+
+loopRestart = 'Skoro usuneliśmy błędne dane to co powinienem dodać w ich miejsce?'
+
+userBackout = 'Czyli wszystko jest w porządku? Potwierdź jeśli chciałbyś przejść do podsumowania lub raz jeszcze powiedz co chciałbyś zmienić'
 
 removedSelection = 'Ok! Usunąłem ten wybór. Na jaki chcesz go zmienić?'
 
 removedSelections = 'Ok! Najwyraźniej coś pomieszałem, wybacz. Zacznijmy proszę od nowa! :-) Jaką markę lub jaki rodzaj auta bierzesz pod uwagę?'
 
+time_now = 'Jest {}:{}'

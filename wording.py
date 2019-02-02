@@ -10,12 +10,12 @@ carCategories = ['miejskie', 'kompaktowe', 'sedan', 'hatchback', 'liftback', 'co
 
 #marki aut
 carBrands = ['toyota', 'honda', 'daihatsu', 'nissan', 'suzuki', 'mazda', 'mitsubishi', 'subaru', 'isuzu',
-             'kawasaki', 'yamaha', 'mitsuoka'];
+             'kawasaki', 'yamaha', 'mitsuoka']
 
 #potwierdzenie
 confirmation = ['ano', 'dokładnie', 'dokladnie', 'faktycznie', 'istotnie', 'jak najbardziej', 'naturalnie',
                 'nie inaczej', 'no', 'no tak', 'tak', 'oczywiście', 'oczywiscie', 'owszem', 'mhm', 'pewnie' 'racja',
-                'rzecz jasna', 'w istocie,' 'w rzeczy samej', 'właśnie', 'zaiste']
+                'rzecz jasna', 'w istocie,' 'w rzeczy samej', 'właśnie', 'zaiste' ,'ok', 'porządku', 'porzadku']
 
 #zaprzeczenie
 negation = ['akurat', 'bynajmniej', 'gdzież', 'nigdy', 'życiu', 'skąd', 'skad', 'skądże', 'skadze', 'nie']
@@ -30,3 +30,7 @@ types = ['kategoria', 'klasa', 'model', 'odmiana', 'podgatunek', 'podklasa', 'po
 #synonimy wszystkiego
 everything = ['całokształt', 'caloksztalt', 'całość', 'calosc', 'komplet', 'ogół', 'ogol', 'pełnia', 'suma', 'wsio', 'wszystko']
 
+#synonimy słowa który
+which = ['ktory', 'ktora', 'która', 'który', 'jaki', 'jaka', 'ktury', 'ktura']
+
+hour = ['godzina', 'godzinka', 'czas', 'pora']
