@@ -78,6 +78,14 @@ def check_response():
         else:
             pass
 
+    elif any(i in user_response_split for i in which) and any(i in user_response_split for i in brand):
+
+        print(list_of_car_manufacturers+(''.join(str(p.capitalize()+'; ') for p in carBrands)))
+
+    elif any(i in user_response_split for i in which) and any(i in user_response_split for i in types):
+
+        print(list_of_car_types+(''.join(str(p+'; ') for p in car_categories_for_listing)))
+
     elif any(i in user_response_split for i in which) and any(i in user_response_split for i in hour):
 
         now = datetime.now()

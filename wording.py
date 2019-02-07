@@ -1,12 +1,16 @@
-#Plik zawierajacy listy zwrotow i synonimow
+#Plik zawierajacy listy zwrotow i synonimow. W tej wersji nadmiernie rozbudowany.
+#Po wdrożeniu analizy inputu i podobienstwa za pomoca biblioteki difflib bedzie uproszczony
 
 #pozegnania
 goodbye = ['bądź zdrów', 'ciao' , 'czesc', 'cześć', 'czolem', 'czołem', 'hej', 'pa', 'serwus', 'zegnaj', 'żegnaj',
-           'elo', 'eloszki', 'hejka', 'hejoszki', 'hejsia', 'siema', 'siemasz', 'siemka'];
+           'elo', 'eloszki', 'hejka', 'hejoszki', 'hejsia', 'siema', 'siemasz', 'siemka']
 
 #kategorie aut
 carCategories = ['miejskie', 'kompaktowe', 'sedan', 'hatchback', 'liftback', 'coupe', 'coupé',
                  'limuzyna', 'suv', 'van', 'minivan', 'targa', 'kabriolet', 'kombi', 'combi', 'roadster', 'pickup', 'pick-up']
+
+car_categories_for_listing = ['miejskie', 'kompaktowe', 'sedan', 'hatchback', 'liftback', 'coupe',
+                 'limuzyna', 'Suv', 'Van', 'minivan', 'targa', 'kabriolet', 'combi', 'roadster', 'pickup']
 
 #marki aut
 carBrands = ['toyota', 'honda', 'daihatsu', 'nissan', 'suzuki', 'mazda', 'mitsubishi', 'subaru', 'isuzu',
@@ -21,16 +25,17 @@ confirmation = ['ano', 'dokładnie', 'dokladnie', 'faktycznie', 'istotnie', 'jak
 negation = ['akurat', 'bynajmniej', 'gdzież', 'nigdy', 'życiu', 'skąd', 'skad', 'skądże', 'skadze', 'nie']
 
 #synonimy marki
-brand = ['marka', 'firma', 'nazwa']
+brand = ['marka', 'marki', 'firmy', 'firma', 'nazwa']
 
 #synonimy typu
-types = ['kategoria', 'klasa', 'model', 'odmiana', 'podgatunek', 'podklasa', 'podtyp', 'rodzaj', 'seria', 'typ', 'subkategoria',
-         'wariant', 'wersja']
+types = ['kategoria', 'klasa', 'model', 'odmiana', 'odmiany', 'podgatunek', 'podklasa', 'podtyp', 'rodzaj', 'rodzaje', 'seria', 'typ', 'typy',
+         'subkategoria', 'wariant', 'warianty', 'wersja', 'wersje']
 
-#synonimy wszystkiego
+#synonimy słowa wszystko
 everything = ['całokształt', 'caloksztalt', 'całość', 'calosc', 'komplet', 'ogół', 'ogol', 'pełnia', 'suma', 'wsio', 'wszystko']
 
 #synonimy słowa który
-which = ['ktory', 'ktora', 'która', 'który', 'jaki', 'jaka', 'ktury', 'ktura']
+which = ['ktory', 'ktora', 'która', 'który', 'jaki', 'jaka', 'jakie', 'ktury', 'ktura'] #na razie z dodanymi bledami przed wdrozeniem diffliba
 
+#synonimy słowa godzina/czas
 hour = ['godzina', 'godzinka', 'czas', 'pora']

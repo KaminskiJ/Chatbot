@@ -12,21 +12,77 @@ import re
 
 #line = re.sub('[!@#$]', '', line)
 
-print(string.punctuation)
-tekst = 'cwWSsf asf .sgas tak?'
+#print(string.punctuation)
+#tekst = 'cwWSsf asf .sgas tak?'
+#
+#tekst2 = re.sub('[.?!@#$]', '', tekst)
+#print(tekst2, 'ico')
+#
+#print(tekst.lower().split())
 
-tekst2 = re.sub('[.?!@#$]', '', tekst)
-print(tekst2, 'ico')
 
-print(tekst.lower().split())
+lorem = '''
 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempor libero iaculis lorem porttitor, a pretium felis eleifend.\n Nulla a consectetur augue. Sed luctus libero ut mauris convallis maximus. Mauris sapien justo, tempus at nunc vel,\n condimentum viverra diam. Mauris egestas lorem vel pulvinar rutrum. Praesent convallis urna sit amet turpis euismod, quis tempor\n lorem tempus. Sed ut odio enim. Donec sagittis tincidunt nisi. Aliquam maximus risus vitae velit tristique rhoncus. \nVestibulum molestie laoreet sem, at convallis neque porta sagittis.
 
+Donec molestie molestie vulputate. Sed placerat facilisis massa, et porttitor lacus mattis ut. Cras a nisl id eros condimentum egestas.\n Morbi malesuada tellus non arcu laoreet facilisis. Curabitur mattis facilisis aliquam. Suspendisse at scelerisque magna. Proin\n in enim quis velit pharetra vehicula. Donec at tellus id ante sollicitudin sodales. Cras imperdiet accumsan elit ac laoreet. '
+'''
+
+'''
 import sys,time,random
 
-typing_speed = 50 #wpm
+typing_speed = 850 #wpm
 def slow_type(t):
     for l in t:
         sys.stdout.write(l)
         sys.stdout.flush()
-        time.sleep(random.random()*10.0/typing_speed)
+        #time.sleep(random.random()*2.0/10)
+        time.sleep(0.01)
     print(t)
+
+slow_type(lorem)'''
+
+#print(carBrands, sep=', ')
+
+
+#paczka ktora wyrzuca ratio zestawianych slow.
+import difflib
+#print(difflib.SequenceMatcher(None, 'hello world', 'hello').ratio())
+#result 0.625
+
+brand = ['marka', 'firma', 'nazwa']
+brand2 = []
+response = 'nazwa'
+response2 = ['nazda', 'firma',]
+support_list = []
+weighted_results = []
+
+#support_list = response2.copy()
+
+def similar_word_matcher(user_choice, wording_list):
+
+    support_list = response2.copy()
+
+    while len(support_list) > 0:
+
+        for result in wording_list:
+            ratio = difflib.SequenceMatcher(None, result, support_list[0]).ratio()
+            weighted_results.append((result, ratio))
+
+        support_list.pop(0)
+
+
+    similars = (sorted(weighted_results, key=lambda x: x[1], reverse=True))
+    print(similars)
+    if similars[0][1] >= 0.75:
+        print('match with word:',similars[0][0])
+        user_choice.append(similars[0][0])
+
+    support_list.clear()
+
+similar_word_matcher(brand2, brand)
+
+#support_list = response2.copy()
+print('2 kopia po sprawdzeniu',support_list)
+print(brand2)
+
