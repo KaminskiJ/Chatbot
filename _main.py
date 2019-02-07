@@ -1,6 +1,6 @@
 from responses import *
 from wording import *
-import re
+import re, difflib
 from datetime import datetime
 
 user_car_category = []
@@ -8,6 +8,10 @@ user_car_brand = []
 user_confirmation_response_list = []
 user_negation_response_list = []
 show_confirmation = []
+support_list = []
+weighted_results = []
+user_response_split = []
+corrected_words = []
 
 def hello():
     print(start)
@@ -21,6 +25,23 @@ def common_member(a, b):
     else:
         pass;
 
+def similar_word_matcher(user_list, wording_list):
+
+    while len(user_list) > 0:
+
+        for result in wording_list:
+            ratio = difflib.SequenceMatcher(None, result, user_list[0]).ratio()
+            weighted_results.append((result, ratio))
+
+        user_list.pop(0)
+
+    similars = (sorted(weighted_results, key=lambda x: x[1], reverse=True))
+
+    for element in similars:
+        if element[1] >= 0.75 and element[1] != 1:
+            corrected_words.append(element[0])
+
+    return corrected_words
 
 def check_response():
 
@@ -31,6 +52,19 @@ def check_response():
     user_response = input()
     user_response = re.sub('[.?!@#$]', '', user_response) #kasuje wszystkie znaki specjalne z inputu użytkownika
     user_response_split = user_response.lower().split()
+    support_list = user_response_split.copy()
+
+    similar_word_matcher(support_list, carBrands)
+    similar_word_matcher(support_list, carCategories) #dodac znowu populacje support list
+
+    try:
+        user_response_split.append(corrected_words[0])
+    except IndexError:
+        pass
+
+    user_response_split = list(set(user_response_split))
+
+    print('za spra',user_response_split)
 
     if any(i in user_response_split for i in carBrands) or any(i in user_response_split for i in carCategories):
 
