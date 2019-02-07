@@ -58,10 +58,11 @@ support_list = []
 weighted_results = []
 
 #support_list = response2.copy()
+user_response_split = ['nazda', 'firme']
 
-def similar_word_matcher(user_choice, wording_list):
+def similar_word_matcher(wording_list):
 
-    support_list = response2.copy()
+    support_list = user_response_split.copy()
 
     while len(support_list) > 0:
 
@@ -74,15 +75,16 @@ def similar_word_matcher(user_choice, wording_list):
 
     similars = (sorted(weighted_results, key=lambda x: x[1], reverse=True))
     print(similars)
-    if similars[0][1] >= 0.75:
-        print('match with word:',similars[0][0])
-        user_choice.append(similars[0][0])
+
+    for element in similars:
+        if element[1] >= 0.75 and element[1] != 1:
+            print('dodano dopasowane slowo',element)
+            user_response_split.append(element[0])
+
 
     support_list.clear()
 
-similar_word_matcher(brand2, brand)
+similar_word_matcher(brand)
 
 #support_list = response2.copy()
-print('2 kopia po sprawdzeniu',support_list)
-print(brand2)
-
+print(user_response_split)
