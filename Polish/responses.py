@@ -2,7 +2,7 @@ start = 'Cześć! Jestem Tytus i jestem botem! Stworzono mnie bym pomógł Ci w 
         '\nNa początku potrzebuje Twojej decyzji jaką markę i typ auta bierzesz pod uwagę. Powiedz mi proszę co Cie interesuje?' \
         '\nJeśli nie wiesz jakie są możliwe opcje po prostu spytaj :-)'
 
-selected_brand = '{} to na prawdę porządna marka, Jakiego typu auta szukasz?'
+selected_brand = '{} to naprawdę porządna marka, Jakiego typu auta szukasz?'
 
 selected_category = 'Ok. A więc interesuje Cię {}. Jakiej marki?'
 

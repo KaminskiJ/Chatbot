@@ -1,5 +1,6 @@
 import string
 import re
+from wording import carBrands
 
 #string.printable
 #'0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ \t\n\r\x0b\x0c'
@@ -58,7 +59,8 @@ support_list = []
 weighted_results = []
 
 #support_list = response2.copy()
-user_response_split = ['nazda', 'firme']
+'''
+user_response_split = ['nazda', 'torota', 'przyklad', 'belkot', 'nic', 'nizan', 'daihztsu', 'honwa', 'koniec stringa']
 
 def similar_word_matcher(wording_list):
 
@@ -78,13 +80,23 @@ def similar_word_matcher(wording_list):
 
     for element in similars:
         if element[1] >= 0.75 and element[1] != 1:
-            print('dodano dopasowane slowo',element)
+            print('dodano dopasowane slowo', element)
             user_response_split.append(element[0])
 
 
-    support_list.clear()
+    #support_list.clear()
 
-similar_word_matcher(brand)
+similar_word_matcher(carBrands)
 
-#support_list = response2.copy()
 print(user_response_split)
+'''
+
+def test(x):
+    print('pocz', x)
+    x.append('test')
+    #return x
+
+test(brand)
+
+print(brand)
+
