@@ -171,18 +171,20 @@ def check_confirmation(corrected_user_input, user_car_category, user_car_brand, 
 
 
 # function used to remove incorrect search condition if user didn't confirm them
-def remove_attribute(corrected_user_input, user_car_category, user_car_brand, user_confirmation_response_list, user_negation_response_list):
+def remove_attribute(corrected_user_input, user_car_category, user_car_brand, user_confirmation_response_list, user_negation_response_list, show_summary):
 
     # removing car brand selection
     if any(i in corrected_user_input for i in carBrands) or any(i in corrected_user_input for i in brand):
         user_car_brand.pop(0)
         user_negation_response_list.pop(0)
+        show_summary.pop(0)
         print(removed_selection)
 
     # removing car type selection
     elif any(i in corrected_user_input for i in carCategories) or any(i in corrected_user_input for i in types):
         user_car_category.pop(0)
         user_negation_response_list.pop(0)
+        show_summary.pop(0)
         print(removed_selection)
 
     # removing of both selections
@@ -190,19 +192,18 @@ def remove_attribute(corrected_user_input, user_car_category, user_car_brand, us
         user_car_category.pop(0)
         user_car_brand.pop(0)
         user_negation_response_list.pop(0)
-
-    # tutaj duplikat odpowiedz przy negacji
-    else:
-        print(cant_find_response_confirmation.format(user_car_brand[0], user_car_category[0]))
+        show_summary.pop(0)
 
     # another chance to confirm that data is correct if this loop was triggered accidentally
-    if any(i in corrected_user_input for i in confirmation):
+    elif any(i in corrected_user_input for i in confirmation):
         user_confirmation_response_list.append('confirmed')
 
     #
     elif any(i in corrected_user_input for i in negation):
         print(what_needs_to_be_changed.format(user_car_brand[0], user_car_category[0]))
 
+    else:
+        print(cant_find_response_confirmation.format(user_car_brand[0], user_car_category[0]))
 
 def end(user_car_brand, user_car_category):
     print(demo_finish.format(user_car_brand[0], user_car_category[0]))
