@@ -8,7 +8,13 @@ selected_category = 'Ok. A więc interesuje Cię {}. Jakiej marki?'
 
 summary_both_options = 'Dla pewności pozwól, że spytam. Chciałbyś zobaczyć {} produkowany/e przez firmę {}?'
 
-cant_find_response = 'Przepraszam ale nie rozumiem :-( Spróbuj proszę inaczej sformułować swoją odpowiedź'
+cant_find_response = 'Przepraszam ale nie rozumiem :( Spróbuj proszę inaczej sformułować swoją odpowiedź. \nWciąż nie wiem jakiej marki czy rodzaju auta powinienem szukać'
+
+cant_find_response_one_var = 'Przepraszam ale nie rozumiem :( Spróbuj proszę inaczej sformułować swoją odpowiedź. \nJak na razie wiem, że interesuje Cię {} niemniej wciąż brakuje mi informacji {}'
+
+car_type = 'jaki powinien to być typ auta'
+
+car_brand = 'jaka powinna to być marka auta'
 
 cant_find_response_confirmation = 'Przepraszam ale nie rozumiem :-( Czy wybrana marka ({}) oraz typ auta ({}) jest w porządku?'
 

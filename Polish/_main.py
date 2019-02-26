@@ -1,6 +1,6 @@
 from functions import *
 
-# global variables used to store final user picks
+# global variables used to store final user picks and trigger contextual dialogue options
 user_car_category = []
 user_car_brand = []
 user_confirmation_response_list = []
@@ -34,7 +34,7 @@ while len(user_confirmation_response_list) == 0:
 
         else:
 
-            remove_atribute(corrected_user_input, user_car_category, user_car_brand, user_confirmation_response_list, user_negation_response_list)
+            remove_attribute(corrected_user_input, user_car_category, user_car_brand, user_confirmation_response_list, user_negation_response_list)
 
 
 end(user_car_brand, user_car_category)
