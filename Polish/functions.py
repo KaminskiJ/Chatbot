@@ -205,6 +205,7 @@ def remove_attribute(corrected_user_input, user_car_category, user_car_brand, us
     else:
         print(cant_find_response_confirmation.format(user_car_brand[0], user_car_category[0]))
 
+
 def end(user_car_brand, user_car_category):
     print(demo_finish.format(user_car_brand[0], user_car_category[0]))
     print(sql_query.format(user_car_brand[0], user_car_category[0]))

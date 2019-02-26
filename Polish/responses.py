@@ -1,3 +1,6 @@
+# List of bot responses to user input
+
+
 start = 'Cześć! Jestem Tytus i jestem botem! Stworzono mnie bym pomógł Ci w zakupie japońskiego samochodu. ' \
         '\nNa początku potrzebuje Twojej decyzji jaką markę i typ auta bierzesz pod uwagę. Powiedz mi proszę co Cie interesuje?' \
         '\nJeśli nie wiesz jakie są możliwe opcje po prostu spytaj :-)'
