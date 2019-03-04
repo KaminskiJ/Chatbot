@@ -32,7 +32,7 @@ types = ['kategoria', 'klasa', 'model', 'odmiana', 'odmiany', 'podgatunek', 'pod
          'subkategoria', 'wariant', 'warianty', 'wersja', 'wersje']
 
 
-everything = ['całokształt', 'caloksztalt', 'całość', 'calosc', 'komplet', 'ogół', 'ogol', 'pełnia', 'suma', 'wsio', 'wszystko']
+everything = ['całokształt', 'caloksztalt', 'całość', 'calosc', 'komplet', 'ogół', 'ogol', 'pełnia', 'suma', 'wsio', 'wszystko', 'obie', 'oba']
 
 
 which = ['ktory', 'ktora', 'która', 'który', 'jaki', 'jaka', 'jakie']

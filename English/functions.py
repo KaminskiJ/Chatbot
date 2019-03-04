@@ -1,7 +1,7 @@
 import re
 import difflib
-from wording_en import *
-from responses_en import *
+from wording import *
+from responses import *
 from datetime import datetime
 
 
@@ -28,18 +28,24 @@ def input_corrector(user_input):
     corrected_words = []   # support list of words corrected by function
 
     # ---single comparison block start---
-    # Here each word in user input is compared to all dictionaries in order to look for similar words. Each word
-    # is compared between two lists and ratio of they similarity is detected. Then new list with these data is created
-    # Currently it's rather raw format with duplicated code and not iterated by dictionary name as data format
-    # would have to be changed. This will be done in future bot version
+    # Here each word in user input is compared to (almost) all dictionaries in order to look for similar words. Each
+    # word is compared between two lists and ratio of they similarity is detected. Then new list with these data is
+    # created Currently it's rather raw format with duplicated code, not iterated by dictionary name as data format
+    # would have to be changed or one big dictionary would have to be created by consolidating all dictionaries.
+    # This will be incorporated in the future bot version
+
+    # first support list is created in order to not impact user input
     working_input = corrected_input_split.copy()
 
     while len(working_input) > 0:
 
+        # then as long as support list is not empty first member is being compared to each word in dictionary. Then it
+        # receives similarity ratio with each dictionary word and such data combination is added to weighted_result list
         for entry in carBrands:  # car brands comparison
             ratio = difflib.SequenceMatcher(None, entry, working_input[0]).ratio()
             weighted_results.append((entry, ratio))
 
+        # after single iteration first word from working input is removed and another one is compared to all dictionary
         working_input.pop(0)
 
     # ---single comparison block end---
@@ -49,6 +55,66 @@ def input_corrector(user_input):
     while len(working_input) > 0:
 
         for entry in carCategories:  # car categories comparison
+            ratio = difflib.SequenceMatcher(None, entry, working_input[0]).ratio()
+            weighted_results.append((entry, ratio))
+
+        working_input.pop(0)
+
+    working_input = corrected_input_split.copy()
+
+    while len(working_input) > 0:
+
+        for entry in confirmation:  # confirmation comparison
+            ratio = difflib.SequenceMatcher(None, entry, working_input[0]).ratio()
+            weighted_results.append((entry, ratio))
+
+        working_input.pop(0)
+
+    working_input = corrected_input_split.copy()
+
+    while len(working_input) > 0:
+
+        for entry in negation:  # negation comparison
+            ratio = difflib.SequenceMatcher(None, entry, working_input[0]).ratio()
+            weighted_results.append((entry, ratio))
+
+        working_input.pop(0)
+
+    working_input = corrected_input_split.copy()
+
+    while len(working_input) > 0:
+
+        for entry in brand:  # brand comparison
+            ratio = difflib.SequenceMatcher(None, entry, working_input[0]).ratio()
+            weighted_results.append((entry, ratio))
+
+        working_input.pop(0)
+
+    working_input = corrected_input_split.copy()
+
+    while len(working_input) > 0:
+
+        for entry in types:  # types comparison
+            ratio = difflib.SequenceMatcher(None, entry, working_input[0]).ratio()
+            weighted_results.append((entry, ratio))
+
+        working_input.pop(0)
+
+    working_input = corrected_input_split.copy()
+
+    while len(working_input) > 0:
+
+        for entry in everything:  # everything comparison
+            ratio = difflib.SequenceMatcher(None, entry, working_input[0]).ratio()
+            weighted_results.append((entry, ratio))
+
+        working_input.pop(0)
+
+    working_input = corrected_input_split.copy()
+
+    while len(working_input) > 0:
+
+        for entry in which:  # which comparison
             ratio = difflib.SequenceMatcher(None, entry, working_input[0]).ratio()
             weighted_results.append((entry, ratio))
 
@@ -125,15 +191,20 @@ def check_response(corrected_user_input, user_car_category, user_car_brand, user
         print(list_of_car_types+(''.join(str(p+'; ') for p in car_categories_for_listing)))
 
     # unique responses triggered when user asks generic question during data correction
-    elif correction_context[0] == 'brand' and any(i in corrected_user_input for i in which):
+    elif len(correction_context) > 0:
 
-        correction_context.pop(0)
-        print(list_of_car_manufacturers + (''.join(str(p.capitalize() + '; ') for p in carBrands)))
+        if correction_context[0] == 'brand' and any(i in corrected_user_input for i in which):
 
-    elif correction_context[0] == 'category' and any(i in corrected_user_input for i in which):
+            correction_context.pop(0)
+            print(list_of_car_manufacturers + (''.join(str(p.capitalize() + '; ') for p in carBrands)))
 
-        correction_context.pop(0)
-        print(list_of_car_types+(''.join(str(p+'; ') for p in car_categories_for_listing)))
+        elif correction_context[0] == 'category' and any(i in corrected_user_input for i in which):
+
+            correction_context.pop(0)
+            print(list_of_car_types+(''.join(str(p+'; ') for p in car_categories_for_listing)))
+
+        else:
+            pass
 
     # responses to question related to what input is still missing based on current selection
     elif any(i in corrected_user_input for i in what) and any(i in corrected_user_input for i in missing):
