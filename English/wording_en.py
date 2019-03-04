@@ -1,10 +1,4 @@
-#Plik zawierajacy listy zwrotow i synonimow. W tej wersji nadmiernie rozbudowany.
-#Po wdrożeniu analizy inputu i podobienstwa za pomoca biblioteki difflib bedzie uproszczony
-
-
-#to be implemented
-goodbye = []
-
+# List of dictionaries that bot uses to compare to user input
 
 carCategories = ['city', 'compact', 'sedan', 'hatchback', 'liftback', 'coupé',
                  'limo', 'limousine', 'suv', 'van', 'minivan', 'targa', 'converable', 'kombi', 'combi', 'roadster', 'pickup', 'pick-up']

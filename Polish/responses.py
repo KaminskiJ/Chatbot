@@ -26,9 +26,6 @@ what_needs_to_be_changed = 'W takim razie, który wybór chcesz zmienić? Wybran
 wrong_summary_message = 'Wybacz, mój błąd. Pozwól, że się poprawię! Co się nie zgadza? Marka czy rodzaj auta?'
 
 #below need to be implemented
-loopRestart = 'Skoro usuneliśmy błędne dane to co powinienem dodać w ich miejsce?'
-
-#below need to be implemented
 userBackout = 'Czyli wszystko jest w porządku? Potwierdź jeśli chciałbyś przejść do podsumowania lub raz jeszcze powiedz co chciałbyś zmienić'
 
 removed_selection = 'Ok! Usunąłem ten wybór. Na jaki chcesz go zmienić?'

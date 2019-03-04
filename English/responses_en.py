@@ -1,3 +1,5 @@
+# List of bot responses to user input
+
 start = 'Hello! My name is Eric and I\'m a chatbot created to help you to buy a Japanese car. In order to start I need \nyour decision on what car' \
 'manufacturer or car type you take into consideration. Please tell me what would that be?\nIn case you don\'t know what are ' \
 'the possible options just ask :-)'
@@ -11,17 +13,17 @@ summary_both_options = 'Just to be sure allow me to confirm. Would you like to s
 
 cant_find_response = 'I\'m really sorry but I don\'t understand :-( Please try to rephrase your response.'
 
+cant_find_response_one_var = 'I\'m really sorry but I don\'t understand :-( Please try to rephrase your response. \nSo far i know that you are interested in {} but I\'m missing information on {}'
+
+car_type = 'what car type you want'
+
+car_brand = 'which car brand you want'
+
 cant_find_response_confirmation = 'I\'m really sorry but I don\'t understand :-( Is selected manufacturer ({}) and car type ({}) correct?'
 
 what_needs_to_be_changed = 'In this care what would you like to change? Selected manufacturer ({}) or car type ({})?'
 
 wrong_summary_message = 'I\'m sorry I must\'ve made a mistake. Please allow me to correct myself! What\'s wrong? Manufacturer or car type?'
-
-#below need to be implemented
-loopRestart = 'Since we removed incorrect data what should I add in their place?'
-
-#below need to be implemented
-userBackout = 'So everything is correct? Please tell me if you would like to se my proposals or let me know what would you like to change'
 
 removed_selection = 'Ok! I removed this selection. To what would you like to change it?'
 
@@ -29,7 +31,7 @@ removed_selections = 'Ok! My apologies I must\'ve made a mistake.. Please let\'s
 
 time_now = 'It\'s {}:{}'
 
-list_of_car_manufacturers = 'Here\'s the list of all Japaneese car manufacturers: '
+list_of_car_manufacturers = 'Here\'s the list of all Japanese car manufacturers: '
 
 list_of_car_types = 'Here\'s the list of all available car types: '
 

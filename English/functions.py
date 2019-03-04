@@ -1,7 +1,7 @@
 import re
 import difflib
-from wording import *
-from responses import *
+from wording_en import *
+from responses_en import *
 from datetime import datetime
 
 

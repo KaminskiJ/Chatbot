@@ -25,7 +25,7 @@ confirmation = ['ano', 'dokładnie', 'dokladnie', 'faktycznie', 'istotnie', 'jak
 negation = ['akurat', 'bynajmniej', 'gdzież', 'nigdy', 'życiu', 'skąd', 'skad', 'skądże', 'skadze', 'nie']
 
 
-brand = ['marka', 'marki', 'firmy', 'firma', 'nazwa']
+brand = ['marka', 'marki', 'marke', 'firme', 'firmy', 'firma', 'nazwa']
 
 
 types = ['kategoria', 'klasa', 'model', 'odmiana', 'odmiany', 'podgatunek', 'podklasa', 'podtyp', 'rodzaj', 'rodzaje', 'seria', 'typ', 'typy',
